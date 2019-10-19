@@ -5,6 +5,9 @@
   "repository": "https://github.com/SamLucas/authtdd.git",
   "author": "Samuel Lucas <samuellucas0603@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "node src/server.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^7.12.1",

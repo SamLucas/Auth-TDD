@@ -3,6 +3,7 @@ const express = require("express");
 class AppController {
   constructor() {
     this.express = express();
+
     this.middlewares();
     this.routes();
   }
@@ -16,4 +17,4 @@ class AppController {
   }
 }
 
-module.exports = AppController().express;
+module.exports = new AppController().express;

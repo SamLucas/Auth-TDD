@@ -1,23 +1,28 @@
 require("dotenv/config");
 
+const Dafault = {
+  logging: false,
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
+  },
+};
+
 const ConfigEnvironment = {
   development: {
     dialect: "sqlite",
-    storage: "../database/db.sqlite",
+    storage: "./src/database/db.sqlite",
+    ...Dafault,
   },
   production: {
-    host: "localhost",
-    username: "root",
-    password: "eunaoseiminhasenha",
-    database: "nodeauth",
+    host: "",
+    username: "",
+    password: "",
+    database: "",
     dialect: "postgres",
     operatorsAliases: false,
-    logging: false,
-    define: {
-      timestamps: true,
-      underscored: true,
-      underscoredAll: true,
-    },
+    ...Dafault,
   },
 };
 

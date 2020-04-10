@@ -32,6 +32,4 @@ const ConfigEnvironment = {
   },
 };
 
-console.log(process.env.NODE_ENV);
-
 module.exports = ConfigEnvironment[process.env.NODE_ENV];

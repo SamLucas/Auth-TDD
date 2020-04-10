@@ -15,6 +15,12 @@ const ConfigEnvironment = {
     storage: "./src/database/db.sqlite",
     ...Dafault,
   },
+
+  test: {
+    dialect: "sqlite",
+    storage: "./__tests__/db_test.sqlite",
+    ...Dafault,
+  },
   production: {
     host: "",
     username: "",
@@ -26,4 +32,6 @@ const ConfigEnvironment = {
   },
 };
 
-module.exports = ConfigEnvironment[process.env.ENVIRONMENT];
+console.log(process.env.NODE_ENV);
+
+module.exports = ConfigEnvironment[process.env.NODE_ENV];

@@ -6,9 +6,12 @@
   "author": "Samuel Lucas <samuellucas0603@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js --ignore __tests__",
-    "start": "node src/server.js",
-    "test": "jest"
+    "dev": "NODE_ENV=development && nodemon src/server.js --ignore __tests__",
+    "start": "NODE_ENV=production && node src/server.js",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all",
+    "sequelize": "NODE_ENV=development && sequelize"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -20,6 +23,7 @@
   "devDependencies": {
     "nodemon": "^1.19.4",
     "sequelize-cli": "^5.5.1",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "supertest": "^4.0.2"
   }
 }
